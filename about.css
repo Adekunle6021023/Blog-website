@@ -1,0 +1,170 @@
+html,
+body{
+	margin: 0;
+	padding: 0;
+	position: relative;
+	text-align: center;
+}
+
+h1{
+  color: rgb(218, 165, 32);
+  font-size: 40px;
+  text-align: center;
+  text-transform: normal;
+  font-weight: bold;
+  letter-spacing: 1px;
+
+}
+
+.container{
+	width:100%;
+	height:auto;
+	text-align: center;
+	display: flex;
+	align-items: flex-start;
+	flex-wrap: wrap;
+}
+.about{
+	width:100%;
+	height: 600px;
+	background-position: center;
+	background-repeat: no-repeat;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+
+}
+.content{
+	width:100%;
+	height:auto;
+	background-color: rgb(139, 0, 0);
+	font-size: 23px;
+	font-family: audiowide;
+	color:#000;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+b{
+	font-size: 50px;
+	color:#000;
+	text-align: center;
+	font-weight: 500px;
+	text-transform: Uppercase;
+}
+
+ul{
+  list-style: none;
+  padding:0;
+
+}
+
+.brand span{
+  color: rgb(218, 165, 32);
+}
+
+header{
+  position: relative;
+  text-align: center;
+  top: 0;
+  margin: 0;
+  width: 100%;
+  padding: 30px 97px;
+  background: #000000;
+  color: #485e74;
+
+}
+
+header .navigation a{
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 1px;
+  padding: 1px 16px;
+  border-radius: 20px;
+  transition: 0.6s;
+}
+
+header .navigation a:not(:last-child){
+  margin-right: 15px;
+
+}
+
+header .navigation a:hover{
+  background: #000;
+
+}
+footer {
+    background-color: #000000;
+    text-decoration: none;
+    color: #d3d3d3;
+    padding: 34px;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+}
+
+footer .navigation a{
+  color: rgb(218, 165, 32);
+  font-weight: 500;
+  text-align: left;
+  text-decoration: none;
+  letter-spacing: 1px;
+  padding: 1px 16px;
+  border-radius: 20px;
+  transition: 0.6s;
+}
+
+footer .navigation a:not(:last-child){
+  margin-right: 15px;
+
+}
+
+h1{
+   font-size: 40px;
+   font-family: open sans;
+
+}
+
+ul{
+  list-style: none;
+  padding:0;
+
+}
+.media-icons{
+  justify-content: center;
+  margin: auto;
+}
+
+.media-icons a{
+  align-items: center;
+  color: #111;
+  font-size: 15px;
+  transition: 0.3s;
+  transition-property: transform;
+}
+
+.media-icons a:not(:last-child){
+  margin-right: 60px;
+}
+
+.media-icons a:hover{
+  transform: scale(1.5);
+}
+
+@media (max-width: 560px){
+  .content .info h2{
+    font-size: 35px;
+    line-height: 40px;
+  }
+
+  .content .info h2 span{
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+  .content .info p{
+    font-size: 14px;
+  }

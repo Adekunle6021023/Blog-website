@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/about.css' %}" rel ="stylesheet">
+</head>
+
+  <header>
+        <h1 class="brand"><span>Toretto's</span> Blog</h1>
+
+
+      <div class="navigation">
+        <a href="{% url 'blog:home' %}">Home</a>
+        <a href="{% url 'blog:about' %}">About</a>
+        <a href="{% url 'blog:contact' %}">Contact</a>
+      </div>
+  </header>
+
+<body>
+  <div class="container">
+    <div class="about">
+
+    </div>
+    <div class="content">
+        <p><b>T</b>his is the first website Oluwadamilare Akinpelu will be creating.</p>
+    </div>
+  </div>
+         <footer>
+           <div class="navigation">
+             <a href="{% url 'blog:home' %}">Home</a>
+             <a href="{% url 'blog:contact' %}">Contact Us</a>
+           </div>
+
+           <p>CONNECT WITH US</p>
+           <div class="media-icons">
+             <a href="https://web.facebook.com/profile.php?id=100005202726012"><i class="fab fa-facebook-f"></i></a>
+             <a href="https://twitter.com/T_o_r_e_tto?s=08' "><i class="fab fa-twitter"></i></a>
+             <a href="https://www.instagram.com/exicutive_erroor/"><i class="fab fa-instagram"></i></a>
+           </div>
+           <p><a href="{% url 'blog:post_feed' %}">Subscribe to my RSS feed</a></p>
+           <p>Copyright 2020 &copy; Toretto's Blog | All Rights Reserved</p>
+         </footer>
+
+
+
+</body>
+
+</html>

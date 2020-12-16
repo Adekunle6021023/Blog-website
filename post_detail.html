@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load blog_tags %}
+
+
+{% block content %}
+  <h1>{{ post.title }}</h1>
+
+   {% if post.image %}
+     <img src="{{ post.image.url }}" width="460" height="390">
+   {% endif %}
+
+  <p class="date">
+    Published {{ post.publish }} by {{ post.author }}
+  </p>
+  {{ post.body|markdown }}
+
+ <div class="media-icons">
+  <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}"><i class="fab fa-facebook-f"></i></a>
+  
+  <a href="https://twitter.com/home?status={{ share_string }}%20{{ request.build_absolute_uri }}"><i class="fab fa-twitter"></i></a>
+  
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ request.build_absolute_uri }}title={{ post.title }}&summary={{ share_string }}&source={{ request.build_absolute_uri }}"><i class="fab fa-linkedin"></i></a>
+  
+  <a href="http://www.reddit.com/submit?url={{ request.build_absolute_uri }}&title={{ share_string }}."><i class="fab fa-reddit"></i></a>
+   
+  <a href="whatsapp://send?text={{ request.build_absolute_uri }}&title={{ share_string }}."><i class="fab fa-whatsapp"></i></a>
+ </div>
+
+  <h2>Similar posts</h2>
+  {% for post in similar_posts %}
+      <p><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></p>
+  {% empty %}
+      There are no similar posts yet.
+  {% endfor %}
+
+  {% with comments.count as total_comments %}
+     <h2>{{ total_comments }} comment{{ total_comments|pluralize }}</h2>
+  {% endwith %}
+
+  {% for comment in comments %}
+       <div class="comment">
+           <p class="info">Comment {{ forloop.counter }} by {{ comment.name }} {{ comment.created }}</p>
+           {{ comment.body|markdown }}
+       </div>
+   {% empty %}
+       <p>There are no comments yet.</p>
+   {% endfor %}
+
+   {% if new_comment %}
+       <h2>Your comment has been added.</h2>
+   {% else %}
+     <p>Leave a reply</p>
+     <form method="POST" action=".">
+       {{ comment_form.as_p }}
+       {% csrf_token %}
+       <input type="submit" value="Post comment" class='btn btn-default'>
+     </form>
+
+   {% endif %}
+
+
+{% endblock %}
